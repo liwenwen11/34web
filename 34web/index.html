@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>セイロンフレーバー | スリランカレストラン＆オンラインショップ</title>
+<style>
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.8;
+}
+/* header */
+header {
+  background: linear-gradient(135deg, #ffefd5, #ffd699);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+header h1 {
+  margin: 0;
+  color: #b35900;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+nav { margin-top: 1rem; }
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #804000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+nav a:hover { color: #cc6600; }
+
+/* section */
+section {
+  display: none;
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+  min-height: 85vh;
+}
+section.active { display: block; }
+section h2 {
+  color: #b35900;
+  border-bottom: 3px solid #cc6600;
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 1.9rem;
+  padding-bottom: 0.3rem;
+}
+
+/* product/menu cards */
+.products, .menu-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.product-card, .menu-card {
+  background-color: #fffaf0;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  text-align: center;
+  padding: 1.8rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover, .menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+.product-card img, .menu-card img, .ceo-photo { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; cursor: pointer; }
+.product-card h3, .menu-card h3 { color: #b35900; margin: 1rem 0 0.5rem; font-size: 1.3rem; }
+.product-card p, .menu-card p { color: #804000; font-size: 1rem; }
+
+/* address/map */
+.map-container {
+  margin-top: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+.address-box {
+  background: #fff3e0;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+.address-box h3 { margin-top: 0; color: #b35900; }
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #ffefd5, #ffd699);
+  color: #804000;
+  font-size: 0.95rem;
+}
+.social-icons a {
+  margin: 0 0.7rem;
+  text-decoration: none;
+  color: #804000;
+  font-size: 1.8rem;
+  transition: color 0.3s;
+}
+.social-icons a:hover { color: #cc6600; }
+
+/* lightbox */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+#lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; }
+#lightbox:target { display: flex; }
+
+</style>
+</head>
+<body>
+<header>
+  <h1>セイロンフレーバー</h1>
+  <nav>
+    <a href="#" onclick="showSection('home')">レストラン紹介</a>
+    <a href="#" onclick="showSection('menu')">メニュー</a>
+    <a href="#" onclick="showSection('shop')">オンラインショップ</a>
+    <a href="#" onclick="showSection('access')">アクセス</a>
+    <a href="#" onclick="showSection('about')">会社紹介</a>
+    <a href="#" onclick="showSection('ceo')">社長紹介</a>
+    <a href="#" onclick="showSection('contact')">お問い合わせ</a>
+  </nav>
+</header>
+
+<!-- レストラン紹介 -->
+<section id="home" class="active">
+  <h2>レストラン紹介</h2>
+  <p>東京都内にあるスリランカ料理専門店です。スパイス香るカレーや伝統的家庭料理を提供。</p>
+  <div class="menu-items">
+    <div class="menu-card">
+      <a href="images/sidath-vimukthi-SjH5BRyiYYE-unsplash.jpg" target="_blank">
+        <img src="images/sidath-vimukthi-SjH5BRyiYYE-unsplash.jpg" alt="店内" />
+      </a>
+      <h3>店内の様子</h3>
+      <p>落ち着いた空間で本場のスリランカ料理を。</p>
+    </div>
+    <div class="menu-card">
+      <a href="images/24_477.jpg" target="_blank">
+        <img src="images/24_477.jpg" alt="カレーセット" />
+      </a>
+      <h3>カレーセット</h3>
+      <p>スパイスの香りが広がる人気メニュー。</p>
+    </div>
+    <div class="menu-card">
+      <a href="images/07_239.jpg" target="_blank">
+        <img src="images/07_239.jpg" alt="ランチメニュー" />
+      </a>
+      <h3>ランチメニュー</h3>
+      <p>お得なランチセットをご用意。</p>
+    </div>
+  </div>
+</section>
+
+<!-- メニュー -->
+<section id="menu">
+  <h2>メニュー</h2>
+  <div class="menu-items">
+    <div class="menu-card">
+      <a href="images/スリランカプレート.webp" target="_blank">
+        <img src="images/スリランカプレート.webp" alt="スリランカプレート" />
+      </a>
+      <h3>スリランカプレート</h3>
+      <p>本格スリランカの定番ワンプレート。</p>
+    </div>
+    <div class="menu-card">
+      <a href="images/チキンカレー.jpg" target="_blank">
+        <img src="images/チキンカレー.jpg" alt="チキンカレー" />
+      </a>
+      <h3>チキンカレー</h3>
+      <p>スリランカ産スパイス使用。</p>
+    </div>
+    <div class="menu-card">
+      <a href="images/ベジタリアンカレー.jpg" target="_blank">
+        <img src="images/ベジタリアンカレー.jpg" alt="ベジタリアンカレー" />
+      </a>
+      <h3>ベジタリアンカレー</h3>
+      <p>野菜の旨味を生かした健康志向メニュー。</p>
+    </div>
+  </div>
+</section>
+
+<!-- オンラインショップ -->
+<section id="shop">
+  <h2>オンラインショップ</h2>
+  <p>冷凍食品・調味料を販売しています。</p>
+  <div class="products">
+    <div class="product-card">
+      <a href="images/sidath-vimukthi-_Th1rLduN6U-unsplash.jpg" target="_blank">
+        <img src="images/sidath-vimukthi-_Th1rLduN6U-unsplash.jpg" alt="セイロン紅茶" />
+      </a>
+      <h3>セイロン紅茶</h3>
+      <p>香り高いスリランカ紅茶。</p>
+    </div>
+    <div class="product-card">
+      <a href="images/スパイスセット.jpg" target="_blank">
+        <img src="images/スパイスセット.jpg" alt="スパイス" />
+      </a>
+      <h3>スパイスセット</h3>
+      <p>オリジナルブレンドのスパイスミックス。</p>
+    </div>
+    <div class="product-card">
+      <a href="images/即食カレー.jfif" target="_blank">
+        <img src="images/即食カレー.jfif" alt="即食カレー" />
+      </a>
+      <h3>即食カレー</h3>
+      <p>簡単に温めるだけで楽しめます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 访问/地图 -->
+<section id="access">
+  <h2>アクセス</h2>
+  <div class="address-box">
+    <h3>店舗住所</h3>
+    <p>東京都国分寺市本町1-2-3 セイロンビル 1F</p>
+    <p>JR国分寺駅 北口 徒歩5分</p>
+  </div>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1234567890!2d139.483456!3d35.701234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f0abcdef1234%3A0xabcdef123456789!2z5p2x5Lqs5rC05YyX!5e0!3m2!1sja!2sjp!4v1699999999999!5m2!1sja!2sjp" 
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- 公司介绍 -->
+<section id="about">
+  <h2>会社紹介</h2>
+  <p>当社はスリランカ料理の魅力を日本に広めることを使命としています。店内・デリバリー・オンラインショップを通じて本格スリランカ料理を提供。地域イベントや文化交流にも参加し、社員一人ひとりが料理技術とサービス向上に努めています。</p>
+</section>
+
+<!-- 社长介绍 -->
+<section id="ceo">
+  <h2>社長紹介</h2>
+   <div>
+    <img src="images/att.OEU6RhD5v70pDAGMmb0c8VrilZH6yCiUhpzuYeG6324.jpeg" 
+         alt="社長写真" 
+         width="150" 
+         style="float: left; margin-right: 1rem; margin-bottom: 1rem; border-radius: 10px;">
+    <h3>社長：李文科</h3>
+    <p>中国出身でカレーが大好き。日本で留学経験があり、日本とスリランカの文化を融合した料理を提供しています。</p>
+  </div>
+</section>
+
+<!-- 联系方式 -->
+<section id="contact">
+  <h2>お問い合わせ</h2>
+  <p>Email: <a href="mailto:wenwen1585@gmail.com">wenwen1585@gmail.com</a></p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com" target="_blank">📘</a>
+    <a href="https://www.instagram.com" target="_blank">📸</a>
+  </div>
+</section>
+
+<footer>
+  <p>株式会社 セイロンフレーバー © 2025</p>
+</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+</body>
+</html>
